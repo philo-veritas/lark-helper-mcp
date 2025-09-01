@@ -1,13 +1,45 @@
 [project]
 name = "lark-helper-mcp"
 version = "0.1.0"
-description = "Add your description here"
+description = "A Model Context Protocol (MCP) server for Lark (Feishu) integration"
 readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "philoveritas"},
+]
+keywords = ["mcp", "lark", "feishu", "claude", "ai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications :: Chat",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 requires-python = ">=3.12"
 dependencies = [
     "lark-helper==0.1.0.dev15",
     "mcp[cli]>=1.13.1",
 ]
+
+[dependency-groups]
+dev = [
+    "build>=1.3.0",
+    "twine>=6.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/philoveritas/lark-helper-mcp"
+Repository = "https://github.com/philoveritas/lark-helper-mcp"
+Issues = "https://github.com/philoveritas/lark-helper-mcp/issues"
+
+[project.scripts]
+lark-helper-mcp = "lark_helper_mcp.server:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
 
 [tool.ruff]

@@ -4,7 +4,9 @@
       "Bash(tree:*)",
       "Bash(uv:*)",
       "Bash(ruff:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(lark-helper-mcp:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

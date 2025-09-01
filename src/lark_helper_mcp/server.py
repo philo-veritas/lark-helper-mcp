@@ -27,7 +27,13 @@ def send_text_message(receive_id: str, receive_id_type: str, text_content: str):
     """
     token_manager = TenantAccessTokenManager(config.lark_app_id, config.lark_app_secret)
     receive_id_type_enum = ReceiveIdType(receive_id_type)
-    send_message(token_manager, receive_id, receive_id_type_enum, MessageType.TEXT, TextMessageContent(text=text_content).json_str())
+    send_message(
+        token_manager,
+        receive_id,
+        receive_id_type_enum,
+        MessageType.TEXT,
+        TextMessageContent(text=text_content).json_str(),
+    )
     return "success"
 
 
