@@ -1,0 +1,45 @@
+[project]
+name = "lark-helper-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=1.13.1",
+]
+
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+exclude = [
+  ".git", ".venv", ".ruff_cache",  # 常见缓存/虚拟目录
+  "dist", "build", "node_modules",
+]
+include = ["src/**/*.py"]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "ARG001", # unused arguments in functions
+    "C4",  # comprehensions：推导式改进
+    "ISC", # 隐式字符串拼接
+    "UP",  # pyupgrade：自动语法升级
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "W191",  # indentation contains tabs
+    "B904",  # Allow raising exceptions without from e, for HTTPException
+    "ISC001",  # 禁用与格式化器冲突的隐式字符串拼接规则
+]
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
