@@ -3,7 +3,8 @@
     "allow": [
       "Bash(tree:*)",
       "Bash(uv:*)",
-      "Bash(ruff:*)"
+      "Bash(ruff:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

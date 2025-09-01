@@ -18,7 +18,19 @@ class Config:
         """验证配置是否完整"""
         errors = []
 
+        if not self.lark_app_id:
+            errors.append("LARK_APP_ID 环境变量是必需的")
+
+        if not self.lark_app_secret:
+            errors.append("LARK_APP_SECRET 环境变量是必需的")
+
         return errors
+
+    def ensure_required_config(self):
+        """确保必需的配置存在，否则抛出异常"""
+        errors = self.validate_config()
+        if errors:
+            raise ValueError("配置错误：\n" + "\n".join(f"- {error}" for error in errors))
 
 
 # 创建全局配置实例
